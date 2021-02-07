@@ -45,3 +45,19 @@ function TextToSpeechPos(source, name_, lang, text, volume_, pos, loop_)
 end
 
 exports('TextToSpeechPos', TextToSpeechPos)
+
+
+
+local ttsids = {}
+RegisterCommand("tts2all", function(source, args)
+	local msg = ""
+	for i = 1, #args, 1 do
+		msg = msg .. args[i]
+	end
+	local id = math.random(9999999, 99999999999999)
+	while ttsids[id] do
+		id = math.random(9999999, 99999999999999)
+	end
+	ttsids[id] = true
+	TriggerClientEvent("ttsallCL", -1, { id, msg } )
+end, true)
