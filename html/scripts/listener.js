@@ -1,7 +1,7 @@
 var soundList = [];
 var closeToPlayer = [];
 
-var playerPos = [-90000,-90000,-90000];
+var playerPos = [0,0,0];
 $(function(){
 	window.addEventListener('message', function(event) {
 		var item = event.data;
@@ -188,9 +188,7 @@ function addToCache()
 			}
 			else
 			{
-                if(!sound.isMuted() && sound.loaded()) {
-                    sound.mute();
-                }
+                if(!sound.isMuted()) sound.mute();
 			}
 		}
 	}

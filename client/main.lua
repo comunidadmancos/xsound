@@ -1,6 +1,7 @@
 globalOptionsCache = {}
 isPlayerCloseToMusic = false
 disableMusic = false
+muteMusic = false
 
 function getDefaultInfo()
     return {
